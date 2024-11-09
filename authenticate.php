@@ -4,7 +4,6 @@ session_start();
 
 $user = $_POST["user"];
 $pwd = $_POST["pwd"];
-//$pwdHash = password_hash($pwd, PASSWORD_DEFAULT);
 
 // login to the softball database
 $servername = "localhost";
