@@ -32,8 +32,10 @@ if ($result->num_rows === 0) {
 // otherwise, password_verify(password from form, password from db)
 // if good, put username in session, otherwise send back to login
 else {
+    $row = $result->fetch_assoc();
     if (password_verify($pwd, $row["password"])) {
         $_SESSION['username'] = $user;
+        header("Location: games.php");
     }
     else {
         header("Location: index.php");
